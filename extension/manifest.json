@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Letterboxd List Suggester",
+  "version": "1.0.0",
+  "description": "Suggests films to add to a Letterboxd list by cross-referencing the similar films of everything already on it.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://letterboxd.com/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://letterboxd.com/*/list/*",
+        "https://letterboxd.com/*/watchlist/*",
+        "https://letterboxd.com/*/watchlist"
+      ],
+      "js": [
+        "src/store.js",
+        "src/letterboxd.js",
+        "src/recommend.js",
+        "src/panel.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Letterboxd List Suggester"
+  }
+}

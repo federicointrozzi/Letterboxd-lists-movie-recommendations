@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    width: 268px; margin: 0; padding: 16px;
+    background: #14181c; color: #9ab;
+    font: 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  h1 { color: #fff; font-size: 14px; margin: 0 0 14px; }
+  label { display: block; margin-bottom: 14px; }
+  .row { display: flex; align-items: center; gap: 8px; }
+  .hint { color: #556; font-size: 11px; margin-top: 4px; line-height: 1.4; }
+  input[type=text], input[type=number] {
+    width: 100%; box-sizing: border-box; margin-top: 5px;
+    padding: 7px 9px; border: 1px solid #456; border-radius: 4px;
+    background: #2c3440; color: #fff; font-size: 13px;
+  }
+  input[type=text]:focus, input[type=number]:focus { outline: 0; border-color: #00e054; }
+  button {
+    width: 100%; padding: 8px; border: 0; border-radius: 4px;
+    background: #2c3440; color: #9ab; font-size: 12px; cursor: pointer;
+  }
+  button:hover { background: #38414d; color: #fff; }
+  #saved { color: #00e054; font-size: 11px; height: 14px; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>Letterboxd List Suggester</h1>
+
+  <label>
+    <div class="row">
+      <input type="checkbox" id="useWatchedData">
+      <span>Mark films I have already seen</span>
+    </div>
+    <div class="hint">Suggestions you have seen get a "seen" badge. Hiding them is a
+      one-click filter in the results panel, so nothing is lost by leaving this on.</div>
+  </label>
+
+  <label>
+    Suggestions to show
+    <input type="number" id="maxResults" min="5" max="100" step="5">
+  </label>
+
+  <label>
+    Letterboxd username
+    <input type="text" id="username" placeholder="detected automatically">
+    <div class="hint">Only needed if hiding watched films does not work on its own.</div>
+  </label>
+
+  <button id="clear">Clear cached data</button>
+  <div id="saved"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

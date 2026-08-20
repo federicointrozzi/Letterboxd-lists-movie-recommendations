@@ -1,0 +1,24 @@
+# Build output
+target/
+*.class
+
+# Artefatto generato dal maven-shade-plugin a ogni package
+dependency-reduced-pom.xml
+
+# Il wrapper scarica Maven da solo: nel repo bastano mvnw, mvnw.cmd
+# e maven-wrapper.properties. La distribuzione completa e' ~20 MB.
+.mvn/wrapper/apache-maven-*/
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven.zip
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Impostazioni locali di Claude Code (permessi specifici di questa macchina)
+.claude/settings.local.json
+
+# Sistema
+.DS_Store
+Thumbs.db
